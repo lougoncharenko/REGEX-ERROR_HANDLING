@@ -42,4 +42,19 @@ console.log(result)
 
 
 //Match a Literal String with Different Possibilities
+let petString = "James has a pet cat.";
+let petRegex= /dog|cat|bird|fish/
+result=petRegex.test(petString)
+console.log(result)
+
+
+//ignore case while matching
+let newString='freecodecamp'
+let fccRegex=/Code/i
+result=fccRegex.test(newString);
+console.log(result);
+
+
+//Extract Matches
+
 
