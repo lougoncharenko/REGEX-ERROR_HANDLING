@@ -145,3 +145,150 @@ result = difficultSpelling.match(myRegex);
 console.log(result)
 
 //Match Characters that Occur Zero or More Times
+let soccerWord = "gooooooooal!";
+let gPhrase = "gut feeling";
+let oPhrase = "over the moon";
+let goRegex = /go*/;
+soccerWord.match(goRegex);
+gPhrase.match(goRegex);
+oPhrase.match(goRegex);
+
+//Match Beginning String Patterns
+let firstString = "Ricky is first and can be found.";
+let firstRegex = /^Ricky/;
+result=firstRegex.test(firstString);
+console.log(result)
+let notFirst = "You can't find Ricky now.";
+console.log(firstRegex.test(notFirst));
+
+
+//Match Ending String Patterns
+let theEnding = "This is a never ending story";
+let storyRegex = /story$/;
+console.log(storyRegex.test(theEnding));
+let noEnding = "Sometimes a story will have to end";
+console.log(storyRegex.test(noEnding));
+
+
+//practice
+let caboose = "The last car on a train is the caboose";
+let lastRegex = /caboose$/; // Change this line
+result = lastRegex.test(caboose);
+console.log(result)
+
+
+//Match All Letters and Numbers
+let longHand = /[A-Za-z0-9_]+/;
+let shortHand = /\w+/;
+let numbers = "42";
+let varNames = "important_var";
+longHand.test(numbers);
+shortHand.test(numbers);
+longHand.test(varNames);
+shortHand.test(varNames);
+
+
+//Match Everything But Letters and Numbers
+shortHand = /\W/;
+numbers = "42%";
+let sentence = "Coding!";
+numbers.match(shortHand);
+sentence.match(shortHand);
+
+//Match All Numbers\
+let movieName = "2001: A Space Odyssey";
+let numRegex = /\d/g; 
+result = movieName.match(numRegex).length;
+console.log(result)
+
+
+//match all non numbers short hand
+movieName = "2001: A Space Odyssey";
+let noNumRegex = /\D/g; // 
+result = movieName.match(noNumRegex).length;
+
+
+//match white space
+let whiteSpace = "Whitespace. Whitespace everywhere!"
+let spaceRegex = /\s/g;
+whiteSpace.match(spaceRegex);
+
+
+
+//Specify Only the Lower Number of Matches
+let A4 = "haaaah";
+let A2 = "haah";
+let A100 = "h" + "a".repeat(100) + "h";
+let multipleA = /ha{3,}h/;
+multipleA.test(A4); //true
+multipleA.test(A2);//false
+multipleA.test(A100); //true
+
+//practice
+let haStr = "Hazzzzah";
+let haRegex = /Haz{4,}ah/; // Change this line
+result = haRegex.test(haStr);
+
+
+//check for all or nothing
+let american = "color";
+let british = "colour";
+let rainbowRegex= /colou?r/;
+rainbowRegex.test(american);
+rainbowRegex.test(british);
+
+
+//positive and negative lookahead
+/*
+Lookaheads are patterns that tell 
+JavaScript to look-ahead in your string 
+to check for patterns further along. 
+This can be useful when you want to 
+search for multiple patterns over the same string.
+*/
+
+//positive lookahead(?=...)
+//negative lookahead (?!=...)
+let quit = "qu";
+let noquit = "qt";
+let quRegex= /q(?=u)/;
+let qRegex = /q(?!u)/;
+quit.match(quRegex);
+noquit.match(qRegex);
+
+//practice
+let sampleWord = "astronaut";
+let pwRegex = /(?=\w{5,}(?=\w*\d{2}))/; // Change this line
+pwRegex.test(sampleWord);
+
+
+//Check For Mixed Grouping of Characters
+ myString = "Eleanor Roosevelt";
+ myRegex = /(Eleanor|Franklin Roosevelt)/; // Change this line
+result = myRegex.test(myString); 
+console.log(result)
+
+//reuse patterns using capture groups
+let repeatNum = "42 42 42";
+let reRegex = /^(\d+)\s\1\s\1$/; 
+result = reRegex.test(repeatNum);
+
+
+//Use Capture Groups to Search and Replace
+let wrongText ="The sky is silver"
+let silverRegex=/silver/
+newText= wrongText.replace(silverRegex, 'blue')
+console.log(newText)
+
+str = "one two three";
+let fixRegex=/(\w+)\s(\w+)\s(\w+)/
+let replaceText= "three two one"
+result=str.replace(fixRegex, replaceText)
+console.log(result)
+
+
+
+//Remove Whitespace from Start and End
+let hello = "   Hello, World!  ";
+let wsRegex = /^\s+|\s+$/g; 
+let result = hello.replace(wsRegex, "") 
