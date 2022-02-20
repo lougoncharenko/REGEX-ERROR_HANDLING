@@ -56,5 +56,40 @@ console.log(result);
 
 
 //Extract Matches
+let hello='Hello, World'.match(/Hello/);
+console.log(hello)
+let ourString= 'Regular Expressions';
+let ourRegex= /Expressions/;
+let match=ourString.match(ourRegex);
+console.log(match)
 
+//practice
+let extractStr = "Extract the word 'coding' from this string.";
+let codingRegex=/Extract/;
+result=extractStr.match(codingRegex);
+console.log(result)
+
+
+//Find More Than the First Match
+testStr="Repeat, Repeat, Repeat";
+testRegex= /Repeat/g;
+result=testStr.match(testRegex);
+console.log(result)
+
+//practice
+let twinkleStar = "Twinkle, twinkle, little star";
+let starRegex = /twinkle/gi; // Change this line
+ result = twinkleStar.match(starRegex); 
+console.log(result)
+
+
+//Match Anything with Wildcard Period
+let humStr = "I'll hum a song";
+let hugStr = "Bear hug";
+let huRegex = /hu./;
+console.log(huRegex.test(humStr))
+console.log(huRegex.test(hugStr))
+
+
+//Match Single Character with Multiple Possibilities
 
