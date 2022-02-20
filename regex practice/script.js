@@ -92,4 +92,56 @@ console.log(huRegex.test(hugStr))
 
 
 //Match Single Character with Multiple Possibilities
+let bigStr = "big";
+let bagStr = "bag";
+let bugStr = "bug";
+let bogStr = "bog";
+let bgRegex = /b[aiu]g/;
+console.log(bigStr.match(bgRegex))
+console.log(bagStr.match(bgRegex))
+console.log(bugStr.match(bgRegex))
+console.log(bogStr.match(bgRegex))
 
+//practice
+let quoteSample = "Beware of bugs in the above code; I have only proved it correct, not tried it."
+let vowelRegex = /[aeiou]/gi;
+result= quoteSample.match(vowelRegex)
+console.log(result)
+
+
+//Match Letters of the Alphabet
+let catStr = "cat";
+let batStr = "bat";
+let matStr = "mat";
+let agRegex = /[a-e]at/;
+catStr.match(agRegex);
+batStr.match(agRegex);
+matStr.match(agRegex);
+
+//practice
+quoteSample = "The quick brown fox jumps over the lazy dog.";
+let alphaRegex= /[a-z]/gi
+result=quoteSample.match(alphaRegex)
+console.log(result)
+
+
+//Match Numbers and Letters of the Alphabet
+let jennyStr = "Jenny8675309";
+myRegex = /[a-z0-9]/ig;
+console.log(jennyStr.match(myRegex));
+
+
+//Match Single Characters Not Specified
+quoteSample = "3 blind mice.";
+myRegex = /[^a-z0-9]/gi; // Change this line
+result = quoteSample.match(myRegex); 
+console.log(result)
+
+
+//Match Characters that Occur One or More Times
+let difficultSpelling = "Mississippi";
+myRegex = /s+/g; // Change this line
+result = difficultSpelling.match(myRegex);
+console.log(result)
+
+//Match Characters that Occur Zero or More Times
